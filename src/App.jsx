@@ -23,6 +23,7 @@ import React, { useState } from 'react'
       <form onSubmit={handlesubmit}>
         <input type="text" placeholder='Search Movie'  />
         <button type='submit'>Search</button>
+        <button>add</button>
       </form>
 
      </div>
