@@ -4,6 +4,7 @@ import React, { useState } from 'react'
  
  function App() {
   const[movie,setMovie] = useState("")
+  const [moviename,setMoviename] = useState([])
 
 
   function handlesubmit(e){
