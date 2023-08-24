@@ -1,31 +1,25 @@
- import axios from 'axios'
-import React, { useState } from 'react'
-
+ import React, { useState } from 'react'
+ import axios from 'axios';
  
  function App() {
-  const[movie,setMovie] = useState("")
-  const [moviename,setMoviename] = useState(0)
 
+  const [movie,setMovie] = useState([])
+  const [movieName,setMovieName] = useState('')
 
-  function handlesubmit(e){
-    e.preventDefault()
-
+  function handlesubmit(){
     axios.get(`https://api.themoviedb.org/3/search/movie?query=${movie}api_key=ea85630803e293cff396198c4410a67b`)
-
-    .then((res)=>
-    {
-      setMovie(res.data.results)
-      console.log(res.data.results[0])
+    .then((res)=>{
+      setMovie(res.data.results[0])
+      console.log(res.data.results)
     })
   }
-   return (
-     <div>
 
-      <form onSubmit={handlesubmit}>
-        <input type="text" placeholder='Search Movie'  />
-        <button type='submit'>Search</button>
-        <button>add</button>
-      </form>
+  return (
+    <div>
+        <form action={handlesubmit}>
+          <input type="text" placeholder='Search Movie' value={movieName} onChange={e=> setMovieName (e.target.value)}/>
+          <button type='submit'>Search</button>
+        </form>
 
      </div>
    )
