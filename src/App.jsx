@@ -11,7 +11,7 @@ let imgpath = "https://image.tmdb.org/t/p/original"
     axios.get("https://api.themoviedb.org/3/search/movie?query="+ movieName +"&api_key=ea85630803e293cff396198c4410a67b")
     .then((res)=>{
       setMovie(res.data.results)
-      console.log(res)
+      console.log(res.data.results)
       
     })
   }
@@ -29,6 +29,7 @@ let imgpath = "https://image.tmdb.org/t/p/original"
           <>
         <img src={imgpath + movie[0].poster_path } alt="hi" />
         <h1>{val.title}</h1>
+
           </>
         
         )
