@@ -26,7 +26,11 @@ let imgpath = "https://image.tmdb.org/t/p/original"
 
       {movie.map((val,ind)=>{
         return(
+          <>
         <img src={imgpath + movie[0].poster_path } alt="hi" />
+        <h1>{val.title}</h1>
+          </>
+        
         )
       })}
 
