@@ -43,13 +43,15 @@
 
 
 import React from 'react'
-import Again from './Again'
+// import Again from './Again'
 import './App.css'
+import Aekbaror from './Aekbaror'
 
 function App() {
   return (
     <div>
-      <Again/>
+      {/* <Again/> */}
+      <Aekbaror />
     </div>
   )
 }
